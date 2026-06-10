@@ -5,8 +5,8 @@ from lightgbm import LGBMClassifier
 from sklearn.metrics import classification_report
 import joblib
 
-loyalty = pd.read_csv('data/Customer Loyalty History.csv')
-activity = pd.read_csv('data/Customer Flight Activity.csv')
+loyalty = pd.read_csv('Customer Loyalty History.csv')
+activity = pd.read_csv('Customer Flight Activity.csv')
 
 activity['Date'] = pd.to_datetime(activity['Year'].astype(str) + '-' + activity['Month'].astype(str) + '-01')
 
