@@ -28,8 +28,13 @@ st.set_page_config(page_title='Airline Loyalty Intelligence',layout='wide')
 
 st.title('Airline Loyalty Behavioral Intelligence System')
 
-loyalty = pd.read_csv('data/Customer Loyalty History.csv')
-activity = pd.read_csv('data/Customer Flight Activity.csv')
+from pathlib import Path
+
+BASE_DIR = Path(__file__).parent
+
+loyalty = pd.read_csv(BASE_DIR / "Customer Loyalty History.csv")
+activity = pd.read_csv(BASE_DIR / "Customer Flight Activity.csv")
+calendar = pd.read_csv(BASE_DIR / "Calendar.csv")
 
 activity_summary = activity.groupby('Loyalty Number').agg({
     'Total Flights':'sum',
