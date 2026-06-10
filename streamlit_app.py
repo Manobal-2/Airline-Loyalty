@@ -4,6 +4,26 @@ import pandas as pd
 import plotly.express as px
 import joblib
 
+from pathlib import Path
+import pandas as pd
+
+BASE_DIR = Path(__file__).parent
+
+loyalty = pd.read_csv(
+    BASE_DIR / "Customer Loyalty History.csv"
+)
+
+activity = pd.read_csv(
+    BASE_DIR / "Customer Flight Activity.csv"
+)
+
+calendar = pd.read_csv(
+    BASE_DIR / "Calendar.csv"
+)
+
+dictionary = pd.read_csv(
+    BASE_DIR / "Airline Loyalty Data Dictionary.csv"
+)
 st.set_page_config(page_title='Airline Loyalty Intelligence',layout='wide')
 
 st.title('Airline Loyalty Behavioral Intelligence System')
